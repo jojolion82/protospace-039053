@@ -43,10 +43,12 @@
             </div>
           <% end %>
           <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %> 
         <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-            <li class="comments_list">
+          <% if @comments %>
               <% @comments.each do |comment| %>
               <li class="comments_list">
                 <%= comment.text %>
